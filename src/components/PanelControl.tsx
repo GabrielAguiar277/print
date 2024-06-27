@@ -63,14 +63,14 @@ export function PanelControl () {
             <div>
                 <p className="font-semibold text-gray-500">Delete</p>
                 <div className="flex gap-2 items-center">
-                    <button type="button" className={`text-white   ${ (disable && !keysPressed.has(" ")) ? "bg-pink-700 cursor-pointer" : "cursor-not-allowed bg-pink-200" } font-medium rounded-lg text-sm px-36 py-2.5 text-center`} disabled={disable}>Space</button>
+                    <button type="button" onClick={clearPrint} className={`text-white   ${ (disable && !keysPressed.has(" ")) ? "bg-pink-700 cursor-pointer" : "cursor-not-allowed bg-pink-200" } font-medium rounded-lg text-sm px-36 py-2.5 text-center`} disabled={!disable}>Space</button>
                     <span className="font-semibold text-gray-500">or</span>
-                    <button type="button" className={`text-white   ${ (disable && !keysPressed.has("Backspace")) ? "bg-pink-700 cursor-pointer" : "cursor-not-allowed bg-pink-200" } font-medium rounded-lg text-sm px-12 py-2.5 text-center`} disabled={disable}><MdOutlineKeyboardBackspace size={20} /></button>
+                    <button type="button" onClick={clearPrint} className={`text-white   ${ (disable && !keysPressed.has("Backspace")) ? "bg-pink-700 cursor-pointer" : "cursor-not-allowed bg-pink-200" } font-medium rounded-lg text-sm px-12 py-2.5 text-center`} disabled={!disable}><MdOutlineKeyboardBackspace size={20} /></button>
                 </div>
             </div>
             <div>
                 <p className="font-semibold text-gray-500">Download</p>
-                <button type="button" className={`text-white   ${ (disable && !keysPressed.has("Enter")) ? "bg-pink-700 cursor-pointer" : "cursor-not-allowed bg-pink-200" } font-medium rounded-lg text-sm px-12 py-2.5 text-center`} disabled={disable}><IoReturnDownBack size={20} /></button>
+                <button type="button" onClick={handleDownload} className={`text-white   ${ (disable && !keysPressed.has("Enter")) ? "bg-pink-700 cursor-pointer" : "cursor-not-allowed bg-pink-200" } font-medium rounded-lg text-sm px-12 py-2.5 text-center`} disabled={!disable}><IoReturnDownBack size={20} /></button>
             </div>
         </div>
     )
